@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<!-- //<script src="./script.js">
+</script> -->
+
+<body>
+    <h3><center>Calculator</center></h3>
+    <div id="bg">
+    <input type="text" placeholder="Enter the number:" id="num1">
+    <br>
+    <h3 style="text-align: center;">Result:</h3>
+    <p id="result"></p>
+    
+    <h3 style="text-align: center;">Operations:</h3>
+    <p id="operation"></p>
+<div class="opbutton">
+    <button onclick="add()" id="button"> ADD </button>
+    <button onclick="sub()" id="button"> SUB </button>
+ 
+    
+</div>
+<div class="opbutton">
+     <button onclick="mul()" id="button"> MUL </button>
+    <button onclick="div()" id="button"> DIV </button>
+
+    
+</div>
+    
+    <button onclick="equals()" id="button2">Result</button>
+    <button onclick="window/location.reload()" id="button2">Reload</button>
+
+</div>
+
+</body>
+<script>
+    data_global = "";
+    data_initiate = parseInt("0");
+
+    function add() {
+        if (data_global == "") {
+            data_global += document.getElementById("num1").value;
+            //---------------------------------//
+            data1 = document.getElementById("num1").value;
+            d1 = parseInt(data1);
+
+            data_initiate += d1;
+        } else {
+            data_global += "+" + document.getElementById("num1").value;
+
+            //---------------------------------//
+            data1 = document.getElementById("num1").value;
+            d1 = parseInt(data1);
+
+            data_initiate += d1;
+        }
+    }
+
+    function sub() {
+        if (data_global.length == 0) {
+            data_global += document.getElementById("num1").value;
+
+            //---------------------------------//
+            d1 = parseInt(document.getElementById("num1").value);
+            data_initiate -= d1;
+        }
+        else {
+            data_global += "-" + document.getElementById("num1").value;
+
+            //---------------------------------//
+            d1 = parseInt(document.getElementById("num1").value);
+            data_initiate -= d1;
+        }
+    }
+    function mul() {
+        if (data_global.length == 0) {
+            data_global += document.getElementById("num1").value;
+            //---------------------------------//
+            d1 = parseInt(document.getElementById("num1").value);
+            data_initiate *= d1;
+        } else {
+
+            data_global += "*" + document.getElementById("num1").value;
+            //---------------------------------//
+            d1 = parseInt(document.getElementById("num1").value);
+            data_initiate *= d1;
+        }
+    }
+    function div() {
+        if (data_global.length == 0) {
+            data_global += document.getElementById("num1").value;
+            //---------------------------------//
+            d1 = parseInt(document.getElementById("num1").value);
+            data_initiate /= d1;
+        } else {
+            data_global += "/" + document.getElementById("num1").value;
+            //---------------------------------//
+            d1 = parseInt(document.getElementById("num1").value);
+            data_initiate /= d1;
+        }
+    }
+    function equals() {
+        document.getElementById("operation").innerHTML = data_global;
+        document.getElementById("result").innerHTML = data_initiate;
+    }
+</script>
+
+
+
+</html>
